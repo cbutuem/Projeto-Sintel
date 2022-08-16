@@ -2,42 +2,73 @@ import {Dados} from "../Dados"
 import React, { useState, useEffect } from 'react';
 import { Tabela } from "../Tabela";
 import Popup from "../Popup";
+import ContentPop from "./ContentPop";
 
 export function Nome(props){
     const [isOpen, setIsOpen] = useState(false);
- 
-    const togglePopup = () => {
-    setIsOpen(!isOpen);
-  }
-    let only = [];
-    const [word, setWord] = useState("");
-    const [prent, setPrent] = useState(props.name);
-
-    const words = Dados.map(inf => inf.status);
-
-    console.log(props.name, "leite");
-
-    for(let i = 0; i < words.length; i++)
-    {
-      if (i > words.indexOf(words[i]))
-       {
-          continue;
-       }
-      only.push(words[i]);
+    const [rock, setRock] = useState();
+   
+    function togglePopup(){
+        setIsOpen(!isOpen);
     }
-    console.log(only, "whyyy");
+    
+    let only = [];
+    
+    console.log(props.name, "hello");
+
+    const status = Dados.map(inf => inf.status);
+
+    console.log(status, "marcioo");
+
+    if (props.name == "status"){
+        for(let i = 0; i < status.length; i++)
+        {
+              if (i > status.indexOf(status[i]))
+               {
+                  continue;
+               }
+                only.push(status[i]);            
+        }
+};
+    
+    const sender = Dados.map(inf => inf.sender);
+if (props.top == "sender"){
+    for(let i = 0; i < sender.length; i++)
+    {
+          if (i > sender.indexOf(sender[i]))
+           {
+              continue;
+           }
+          only.push(sender[i]);       
+    }
+};    
+
+    const receiver= Dados.map(inf => inf.receiver);
+if (props.clock == "receiver"){    
+    for(let i = 0; i < receiver.length; i++)
+    {
+          if (i > receiver.indexOf(receiver[i]))
+           {
+              continue;
+           }
+          only.push(receiver[i]);       
+    }
+};    
+    const listOnly = only.map((only)=>
+    <li><input type="checkbox"/>{only}</li>
+);
+const huui= "";
+console.log(rock, "ops");
+console.log(only, "HELL");
   
-  const listOnly = only.map((only)=>
-  <li><input type="checkbox"/>{only}</li>
-  );
     return(
         <>
             <thead>
                         <tr>
                             <th><input type="checkbox"></input></th>
-                            <th onClick={togglePopup} type="button" setNomo="status" class= "but">Status</th>
-                            <th onClick={togglePopup} setNomo="sender" class= "but">Sender</th>
-                            <th onClick={togglePopup} setNomo="receiver" class= "but">Receiver</th> 
+                            <th class= "but"><ContentPop cat ={Dados.map(inf => inf.status)} name="Status"/></th>
+                            <th class= "but"><ContentPop cat ={Dados.map(inf => inf.sender)} name="Sender"/></th>
+                            <th class= "but"><ContentPop cat ={Dados.map(inf => inf.receiver)} name="Receiver"/></th> 
                             <th>Document</th>
                             <th>Content</th>
                             <th>Size(KB)</th>
@@ -46,14 +77,6 @@ export function Nome(props){
                             <th>ID</th>
                             <th></th>
                             <th></th>
-                            {isOpen && <Popup content={
-                                    <>  
-                                       <div>
-                                            <ul>{listOnly}</ul>
-                                        </div>
-                                    </>}
-                                        handleClose={togglePopup}
-                                />}
                         </tr> 
                 </thead>
         </>

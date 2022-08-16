@@ -1,6 +1,7 @@
-export function Data(props){
+function Data(props){
     return(
         <>
         </>
     );
 }
+export default Data; 

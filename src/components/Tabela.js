@@ -33,32 +33,7 @@ const listOnly = only.map((only)=>
 console.log(listOnly,"LISTAAA");
     return(
         <>
-            <table class= "fixed_header">
-                <thead>
-                        <tr>
-                            <th><input type="checkbox"></input></th>
-                            <th onClick={togglePopup} type="button" setNomo="status" class= "but">Status</th>
-                            <th onClick={togglePopup} setNomo="sender" class= "but">Sender</th>
-                            <th onClick={togglePopup} setNomo="receiver" class= "but">Receiver</th> 
-                            <th>Document</th>
-                            <th>Content</th>
-                            <th>Size(KB)</th>
-                            <th>Connection</th>
-                            <th>Date</th>
-                            <th>ID</th>
-                            <th></th>
-                            <th></th>
-                            {isOpen && <Popup content={
-                                    <>  
-                                       <div>
-                                            <ul>{listOnly}</ul>
-                                        </div>
-                                    </>}
-                                        handleClose={togglePopup}
-                                />}
-                        </tr> 
-                </thead>
-                <tbody>    
+            <tbody>    
                 {Dados.map((info) => {
                     return(
                         <>
@@ -81,8 +56,7 @@ console.log(listOnly,"LISTAAA");
                         </>      
                       )
                     })}
-                </tbody> 
-            </table>  
+            </tbody> 
         </>
     );
 

@@ -33,7 +33,7 @@ function App() {
           <div class= "tabela">
             <table class= "fixed_header">
               <Nome/>
-              <Numero/>
+              <Tabela/>
             </table>  
           </div>
         </div>
