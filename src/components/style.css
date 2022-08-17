@@ -80,34 +80,35 @@
   
 }
 
-
-/* POP-UP*/
+/* Popup style */
 .popup-box {
     position: fixed;
-    width: 100px;
+    width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
   }
    
   .box {
+    display: block;
+    justify-content: center;  
     position: relative;
-    width: 200px;
+    width: 30%;
+    margin: 0 auto;
     height: auto;
     max-height: 70vh;
     margin-top: calc(100vh - 85vh - 20px);
-    background: #fff;
-    color: #000;
+    background: red;
     border-radius: 4px;
     padding: 20px;
-    border: 1px solid #999;
-    display: flex;
+    transition: heigh .4s ease;
+    overflow: hidden;
   }
-   
- .close-icon {
+   /*Botao de fechar*/
+  .close-icon {
     content: 'x';
     cursor: pointer;
-    position: relative;
+    position: fixed;
     right: calc(15% - 30px);
     top: calc(100vh - 85vh - 33px);
     background: #ededed;
@@ -116,15 +117,11 @@
     border-radius: 50%;
     line-height: 20px;
     text-align: center;
-    border: 1px solid red;
+    border: 1px solid #999;
     font-size: 20px;
   }
-  .check_pop{
-      padding: 30px;
-      width: 200px;
-  }
   .but{
-      background-color: none;
+      background-color: blue;
       cursor: pointer;   
   }
   .ul, li{

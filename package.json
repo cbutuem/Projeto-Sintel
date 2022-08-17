@@ -9,6 +9,7 @@
     "axios": "^0.27.2",
     "eslint-plugin-react": "^7.30.1",
     "react": "^18.2.0",
+    "react-calendar": "^3.7.0",
     "react-dom": "^18.2.0",
     "react-filter-box": "^3.4.3",
     "react-router-dom": "^6.3.0",

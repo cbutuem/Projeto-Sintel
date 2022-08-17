@@ -1,0 +1,33 @@
+
+.nav {
+  position: fixed;
+  background-color: blueviolet;
+  width:0px;
+  margin : auto; 
+}
+
+.span {
+  cursor : pointer;
+  height: auto;
+  width: auto;
+  background-color: brown;
+}
+.div{
+  background-color: #c0d21e;
+  width: auto;
+}
+.slide {
+  clear:both;
+  width:100px;
+  height:0px;
+  overflow: hidden;
+  text-align: center;
+  transition: heigh .4s ease;
+  background-color: chartreuse;
+}
+
+.slide .li {padding : 30px;}
+
+#touch {position: absolute; opacity: 0; height: 0px; }    
+
+#touch:checked + .slide {height: 100%; width: 200px;} 

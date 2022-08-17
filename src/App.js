@@ -1,9 +1,9 @@
 import './components/style.css';
 import { Tabela } from './components/Tabela';
-import { Nome } from "./components/Filtro/Nome"
-import { Numero } from "./components/Filtro/Numero"
-import { Data } from "./components/Filtro/Data"
-import Popup from "./components/Popup"
+import { Nome } from "./components/Filtro/Nome";
+import { Numero } from "./components/Filtro/Numero";
+import Data from "./components/Filtro/Data";
+import Popup from "./components/Popup";
 import { Dados } from "./components/Dados"
 import React, { useState } from 'react';
 
@@ -28,7 +28,8 @@ function App() {
             </span>
           </div>
           <div class= "filtro-data">
-            <span>So pra ficar demarcado</span>
+            <span>
+            </span>
           </div>
           <div class= "tabela">
             <table class= "fixed_header">
@@ -38,7 +39,6 @@ function App() {
           </div>
         </div>
         <div>
-         
         </div>
       </body>
     </div>
